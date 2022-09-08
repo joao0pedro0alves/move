@@ -6,7 +6,7 @@ export const StyledPaper = styled.div`
     min-height: 411px;
     width: 100%;
     padding: 1rem;
-    transition: 200ms ease-in-out;
+    transition: 300ms ease-in-out;
 
     .MuiBox-root {
         margin-top: 50px;
@@ -17,6 +17,6 @@ export const StyledPaper = styled.div`
 
     &:hover {
         cursor: pointer;
-        box-shadow: 0px 30px 45px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 30px 60px rgba(0, 0, 0, 0.2);
     }
 `

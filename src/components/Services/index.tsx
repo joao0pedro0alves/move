@@ -7,7 +7,7 @@ function Services() {
         <>
             <Container>
                 <Box
-                    paddingY="150px"
+                    paddingY="130px"
                     textAlign="center"
                     display="flex"
                     flexDirection="column"

@@ -1,4 +1,7 @@
+import StyledFooter from "../../components/Footer"
 import Header from "../../components/Header"
+import History from "../../components/History"
+import HowItWorks from "../../components/HowItWorks"
 import Services from "../../components/Services"
 
 function Home() {
@@ -6,6 +9,9 @@ function Home() {
         <>
             <Header />
             <Services />
+            <HowItWorks />
+            <History />
+            <StyledFooter />
         </>
     )
 }
