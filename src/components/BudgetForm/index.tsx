@@ -10,7 +10,7 @@ import Select from "../Select"
 import BudgetFormStepper from "./Stepper"
 
 function BudgetForm() {
-    const [open, setOpen] = useState(true)
+    const [open, setOpen] = useState(false)
     const backdropId = "budget-form-backdrop"
 
     const handleOpen = () => setOpen(true)
