@@ -1,10 +1,15 @@
 import React, {useState} from "react"
 import theme from "../../../styles/theme"
-import events from "../../../consts/events"
-import client from "../../../services/eventEmitter"
 import {CheckCircle} from "react-feather"
-import {Step, StepButton, Box, Typography, Button} from "@mui/material"
-import {StyledStepper} from "./styles"
+import {
+    Step,
+    StepButton,
+    Box,
+    Typography,
+    Button,
+    useMediaQuery,
+} from "@mui/material"
+import {StyledStepper, Container} from "./styles"
 
 const steps = [
     "Suas informações",
@@ -19,6 +24,8 @@ export interface BudgetFormStepperProps {
 }
 
 function BudgetFormStepper({onClose, ...props}: BudgetFormStepperProps) {
+    const isMobile = useMediaQuery(theme.breakpoints.down("sm"))
+
     const [activeStep, setActiveStep] = useState(0)
     const [completed, setCompleted] = useState<{
         [k: number]: boolean
@@ -73,7 +80,10 @@ function BudgetFormStepper({onClose, ...props}: BudgetFormStepperProps) {
 
     return (
         <>
-            <StyledStepper activeStep={activeStep}>
+            <StyledStepper
+                orientation={isMobile ? "vertical" : "horizontal"}
+                activeStep={activeStep}
+            >
                 {steps.map((label, index) => (
                     <Step key={label}>
                         <StepButton color="inherit" onClick={handleStep(index)}>
@@ -117,33 +127,15 @@ function BudgetFormStepper({onClose, ...props}: BudgetFormStepperProps) {
                         </Box>
                     </React.Fragment>
                 ) : (
-                    <Box
-                        sx={{
-                            display: "flex",
-                            justifyContent: "space-between",
-                            alignItems: "flex-end",
-                            gap: "4rem",
-                        }}
-                    >
-                        <Box
-                            sx={{
-                                width: "100%",
-                            }}
-                        >
+                    <Container>
+                        <div className="Content">
                             {props.renderStepContent
                                 ? props.renderStepContent(activeStep)
                                 : null}
-                        </Box>
-                        <Box
-                            sx={{
-                                display: "flex",
-                                flexDirection: "column",
-                                gap: "1rem",
-                                pt: 2,
-                            }}
-                        >
+                        </div>
+                        <div className="Actions">
                             <Button
-                                size="large"
+                                size={isMobile ? "small" : "large"}
                                 color="error"
                                 disabled={activeStep === 0}
                                 onClick={handleBack}
@@ -152,15 +144,15 @@ function BudgetFormStepper({onClose, ...props}: BudgetFormStepperProps) {
                                 Voltar
                             </Button>
                             <Button
-                                size="large"
+                                size={isMobile ? "small" : "large"}
                                 variant="contained"
                                 color="success"
                                 onClick={handleComplete}
                             >
                                 {isLastStep() ? "Finalizar" : "Próximo"}
                             </Button>
-                        </Box>
-                    </Box>
+                        </div>
+                    </Container>
                 )}
             </div>
         </>

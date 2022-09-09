@@ -31,9 +31,15 @@ export const StyledCollapse = styled.div`
 
     @media screen and (max-width: 600px) {
         width: calc(100% - 1rem);
+        padding-top: 1rem;
+        padding-bottom: 1rem;
     }
 `
 
 export const StyledContainer = styled(Container)`
     text-align: center;
+
+    form {
+        width: 100%;
+    }
 `

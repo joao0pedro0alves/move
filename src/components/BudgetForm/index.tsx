@@ -41,7 +41,7 @@ function BudgetForm() {
                 case 0:
                     return (
                         <>
-                            <Grid item xs={6}>
+                            <Grid item xs={12} sm={6}>
                                 <Input
                                     autoFocus
                                     fullWidth
@@ -50,7 +50,7 @@ function BudgetForm() {
                                     placeholder="Ex: João Pedro"
                                 />
                             </Grid>
-                            <Grid item xs={6}>
+                            <Grid item xs={12} sm={6}>
                                 <Input
                                     fullWidth
                                     color="secondary"
@@ -58,7 +58,7 @@ function BudgetForm() {
                                     placeholder="Ex: Alves"
                                 />
                             </Grid>
-                            <Grid item xs={6}>
+                            <Grid item xs={12} sm={6}>
                                 <Input
                                     fullWidth
                                     color="secondary"
@@ -66,7 +66,7 @@ function BudgetForm() {
                                     placeholder="jhon@doe.com.br"
                                 />
                             </Grid>
-                            <Grid item xs={6}>
+                            <Grid item xs={12} sm={6}>
                                 <Input
                                     fullWidth
                                     color="secondary"
@@ -80,7 +80,7 @@ function BudgetForm() {
                 case 1:
                     return (
                         <>
-                            <Grid item xs={6}>
+                            <Grid item sm={6} xs={12}>
                                 <Select
                                     fullWidth
                                     color="secondary"
@@ -88,7 +88,7 @@ function BudgetForm() {
                                     placeholder=""
                                 />
                             </Grid>
-                            <Grid item xs={6}>
+                            <Grid item sm={6} xs={12}>
                                 <Select
                                     fullWidth
                                     color="secondary"
@@ -96,7 +96,7 @@ function BudgetForm() {
                                     placeholder=""
                                 />
                             </Grid>
-                            <Grid item xs={6}>
+                            <Grid item sm={6} xs={12}>
                                 <Input
                                     fullWidth
                                     color="secondary"
@@ -106,7 +106,7 @@ function BudgetForm() {
                                     rows={5}
                                 />
                             </Grid>
-                            <Grid item xs={6}>
+                            <Grid item sm={6} xs={12}>
                                 <Input
                                     fullWidth
                                     color="secondary"
@@ -130,7 +130,7 @@ function BudgetForm() {
                                     placeholder="Ex: Rua 123, n 9, Centro"
                                 />
                             </Grid>
-                            <Grid item xs={6}>
+                            <Grid item sm={6} xs={12}>
                                 <Input
                                     fullWidth
                                     color="secondary"
@@ -138,7 +138,7 @@ function BudgetForm() {
                                     placeholder="Campo Grande"
                                 />
                             </Grid>
-                            <Grid item xs={6}>
+                            <Grid item sm={6} xs={12}>
                                 <Select
                                     fullWidth
                                     color="secondary"
@@ -146,7 +146,7 @@ function BudgetForm() {
                                     placeholder=""
                                 />
                             </Grid>
-                            <Grid item xs={6}>
+                            <Grid item sm={6} xs={12}>
                                 <Input
                                     fullWidth
                                     color="secondary"
@@ -155,7 +155,7 @@ function BudgetForm() {
                                     placeholder=""
                                 />
                             </Grid>
-                            <Grid item xs={6}>
+                            <Grid item sm={6} xs={12}>
                                 <Input
                                     type="date"
                                     fullWidth
@@ -179,7 +179,7 @@ function BudgetForm() {
                                     placeholder="Ex: Rua 123, n 9, Centro"
                                 />
                             </Grid>
-                            <Grid item xs={6}>
+                            <Grid item sm={6} xs={12}>
                                 <Input
                                     fullWidth
                                     color="secondary"
@@ -187,7 +187,7 @@ function BudgetForm() {
                                     placeholder="Campo Grande"
                                 />
                             </Grid>
-                            <Grid item xs={6}>
+                            <Grid item sm={6} xs={12}>
                                 <Select
                                     fullWidth
                                     color="secondary"
@@ -195,7 +195,7 @@ function BudgetForm() {
                                     placeholder=""
                                 />
                             </Grid>
-                            <Grid item xs={6}>
+                            <Grid item sm={6} xs={12}>
                                 <Input
                                     fullWidth
                                     color="secondary"
@@ -212,7 +212,7 @@ function BudgetForm() {
         }
 
         return (
-            <Grid container spacing={3}>
+            <Grid container spacing={{md: 3, xs: 1}}>
                 {renderFields()}
             </Grid>
         )
@@ -226,7 +226,7 @@ function BudgetForm() {
         >
             <StyledCollapse className={clsx({in: open})}>
                 <StyledContainer>
-                    <Typography variant="h4" fontWeight="bold">
+                    <Typography gutterBottom variant="h4" fontWeight="bold">
                         Vamos começar ?
                     </Typography>
                     <Box>

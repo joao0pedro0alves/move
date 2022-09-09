@@ -9,6 +9,10 @@ export const inputStyles = css`
     padding-left: 1rem;
     border: 1px solid ${theme.palette.grey[200]};
     background-color: ${theme.palette.grey[100]};
+
+    @media screen and (max-width: 600px) {
+        min-height: 45px;
+    }
 `
 
 export const StyledFormControl = styled(FormControl)`
@@ -31,6 +35,13 @@ export const StyledFormControl = styled(FormControl)`
 
     textarea {
         padding-left: 1rem;
+    }
+
+    @media screen and (max-width: 600px) {
+        label {
+            margin-bottom: 2px;
+            font-size: 14px;
+        }
     }
 `
 
