@@ -1,4 +1,5 @@
-import StyledFooter from "../../components/Footer"
+import Footer from "../../components/Footer"
+import BudgetForm from "../../components/BudgetForm"
 import Header from "../../components/Header"
 import History from "../../components/History"
 import HowItWorks from "../../components/HowItWorks"
@@ -11,7 +12,8 @@ function Home() {
             <Services />
             <HowItWorks />
             <History />
-            <StyledFooter />
+            <Footer />
+            <BudgetForm />
         </>
     )
 }
