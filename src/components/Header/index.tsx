@@ -1,8 +1,14 @@
 import {Box, Button, Typography} from "@mui/material"
 import {ChevronRight} from "react-feather"
+import client from "../../services/eventEmitter"
+import events from "../../consts/events"
 import {Cover, StyledContainer} from "./styles"
 
 function Header() {
+    const handleOpenBudgetForm = () => {
+        client.emit(events.budgetForm.open)
+    }
+
     return (
         <>
             <Cover>
@@ -39,7 +45,11 @@ function Header() {
                         flexWrap="wrap"
                         marginTop="3rem"
                     >
-                        <Button size="large" variant="contained">
+                        <Button
+                            size="large"
+                            variant="contained"
+                            onClick={handleOpenBudgetForm}
+                        >
                             Faça um orçamento
                         </Button>
                         <Button

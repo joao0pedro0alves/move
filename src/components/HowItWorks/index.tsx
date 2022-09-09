@@ -1,3 +1,5 @@
+import client from "../../services/eventEmitter"
+import events from "../../consts/events"
 import {
     Box,
     Button,
@@ -37,6 +39,8 @@ const steps = [
 ]
 
 function HowItWorks() {
+    const handleOpenBudgetForm = () => client.emit(events.budgetForm.open)
+
     return (
         <Box
             sx={{
@@ -89,7 +93,11 @@ function HowItWorks() {
                     </Stepper>
                 </Box>
                 <Box>
-                    <Button size="large" variant="outlined">
+                    <Button
+                        onClick={handleOpenBudgetForm}
+                        size="large"
+                        variant="outlined"
+                    >
                         Faça um orçamento Online
                     </Button>
                 </Box>
